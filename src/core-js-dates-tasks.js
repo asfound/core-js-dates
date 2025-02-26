@@ -32,14 +32,7 @@ function dateToTimestamp(date) {
  * Date(2015, 10, 20, 23, 15, 1) => '23:15:01'
  */
 function getTime(date) {
-  const formatter = new Intl.DateTimeFormat('en-us', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  });
-
-  return formatter.format(date);
+  return date.toTimeString().split(' ').shift();
 }
 
 /**
